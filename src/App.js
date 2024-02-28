@@ -3,7 +3,14 @@ function App() {
   const [bill, setbill] = useState([]);
 
   function proprecv(passupper) {
-    console.log(passupper);
+    const feedbackPercentage = parseInt(passupper.feedback); // Parse string to integer
+    const feedbacksPercentage = parseInt(passupper.feedbacks); // Parse string to integer
+
+    const final = (feedbackPercentage + feedbacksPercentage) / 2; // Calculate average
+
+    console.log(final); // Output the average
+
+    console.log(final);
   }
 
   return (
@@ -14,8 +21,8 @@ function App() {
 
   function Form({ onPassupper }) {
     const [value, setvalue] = useState(0);
-    const [feedback, setfeedback] = useState("");
-    const [feedbacks, setfeedbacks] = useState("");
+    const [feedback, setfeedback] = useState(0);
+    const [feedbacks, setfeedbacks] = useState(0);
     const passupper = { value, feedback, feedbacks };
     onPassupper(passupper);
     return (
@@ -41,10 +48,10 @@ function App() {
                 value={feedback}
                 onChange={(e) => setfeedback(e.target.value)}
               >
-                <option value="dissatisfied">Dissatisfied (0%)</option>
-                <option value="okay">it was okay (5%)</option>
-                <option value="good">it was good (10%)</option>
-                <option value="amazing">Absolutely amazing! (20%)</option>
+                <option value="0">Dissatisfied (0%)</option>
+                <option value="10">it was okay (5%)</option>
+                <option value="5">it was good (10%)</option>
+                <option value="20">Absolutely amazing! (20%)</option>
               </select>
             </form>
           </div>
@@ -56,10 +63,10 @@ function App() {
                 value={feedbacks}
                 onChange={(e) => setfeedbacks(e.target.value)}
               >
-                <option value="dissatisfiedt">Dissatisfied (0%)</option>
-                <option value="okayt">it was okay (5%)</option>
-                <option value="goodt">it was good (10%)</option>
-                <option value="amazingt">Absolutely amazing! (20%)</option>
+                <option value="0">Dissatisfied (0%)</option>
+                <option value="10">it was okay (5%)</option>
+                <option value="5">it was good (10%)</option>
+                <option value="20">Absolutely amazing! (20%)</option>
               </select>
             </form>
           </div>
