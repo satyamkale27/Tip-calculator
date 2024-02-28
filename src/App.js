@@ -1,6 +1,6 @@
 import { useState } from "react";
 function App() {
-  const [bill, setbill] = useState("");
+  const [bill, setbill] = useState([]);
 
   return (
     <div>
@@ -9,6 +9,7 @@ function App() {
   );
 
   function Form() {
+    const [value, setvalue] = useState();
     const [feedback, setfeedback] = useState("");
     const [feedbacks, setfeedbacks] = useState("");
     return (
@@ -17,7 +18,7 @@ function App() {
           <div>
             <form className="table">
               <p>How much was the bill?</p>
-              <input type="text"></input>
+              <input type="number" id="myNumberInput" className="no-spinner" />
             </form>
           </div>
 
