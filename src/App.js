@@ -2,16 +2,22 @@ import { useState } from "react";
 function App() {
   const [bill, setbill] = useState([]);
 
+  function proprecv(passupper) {
+    console.log(passupper);
+  }
+
   return (
     <div>
-      <Form />
+      <Form onPassupper={proprecv} />
     </div>
   );
 
-  function Form() {
+  function Form({ onPassupper }) {
     const [value, setvalue] = useState(0);
     const [feedback, setfeedback] = useState("");
     const [feedbacks, setfeedbacks] = useState("");
+    const passupper = { value, feedback, feedbacks };
+    onPassupper(passupper);
     return (
       <div>
         <div>
