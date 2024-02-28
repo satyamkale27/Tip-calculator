@@ -9,7 +9,7 @@ function App() {
   );
 
   function Form() {
-    const [value, setvalue] = useState();
+    const [value, setvalue] = useState(0);
     const [feedback, setfeedback] = useState("");
     const [feedbacks, setfeedbacks] = useState("");
     return (
@@ -18,7 +18,13 @@ function App() {
           <div>
             <form className="table">
               <p>How much was the bill?</p>
-              <input type="number" id="myNumberInput" className="no-spinner" />
+              <input
+                value={value}
+                onChange={(e) => setvalue(e.target.value)}
+                type="number"
+                id="myNumberInput"
+                className="no-spinner"
+              />
             </form>
           </div>
 
@@ -52,6 +58,18 @@ function App() {
             </form>
           </div>
         </div>
+        <div>
+          <Display valuess={value} />
+        </div>
+      </div>
+    );
+  }
+  function Display({ valuess }) {
+    return (
+      <div>
+        <p>
+          You pay {valuess} (${valuess} + tip)
+        </p>
       </div>
     );
   }
