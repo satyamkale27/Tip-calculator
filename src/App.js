@@ -1,4 +1,7 @@
+import { useState } from "react";
 function App() {
+  const [bill, setbill] = useState("");
+
   return (
     <div>
       <Form />
@@ -6,6 +9,8 @@ function App() {
   );
 
   function Form() {
+    const [feedback, setfeedback] = useState("");
+    const [feedbacks, setfeedbacks] = useState("");
     return (
       <div>
         <div>
