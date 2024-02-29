@@ -77,10 +77,13 @@ function Form({ onPassupper, bill }) {
             <option value="20">Absolutely amazing! (20%)</option>
           </select>
         </div>
-        <div>
+        <div className="btn">
           <button type="submit" className="button">
             Submit
           </button>
+          <div>
+            <button className="style">clear</button>
+          </div>
         </div>
       </form>
       <div>
