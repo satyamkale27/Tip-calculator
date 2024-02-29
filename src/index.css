@@ -28,3 +28,12 @@ code {
 .no-spinner {
   -moz-appearance: textfield; /* Firefox */
 }
+.container p,
+.container input {
+  display: inline-block;
+}
+.button {
+  padding: 3px;
+  background-color: aqua;
+  margin-top: 5px;
+}

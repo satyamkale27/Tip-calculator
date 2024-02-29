@@ -6,6 +6,7 @@ function App() {
   function setStates(newState) {
     setBill(newState);
   }
+  console.log("bill", bill);
 
   function propRecv(passupper) {
     const feedbackPercentage = parseFloat(passupper.feedback);
@@ -52,7 +53,7 @@ function Form({ onPassupper }) {
           />
         </div>
 
-        <div className="table">
+        <div className="container">
           <p>How did you like the service?</p>
           <select
             value={feedback}
@@ -67,6 +68,7 @@ function Form({ onPassupper }) {
 
         <div className="table">
           <p>How did your friend like the service?</p>
+
           <select
             value={feedbacks}
             onChange={(e) => setFeedbacks(e.target.value)}
@@ -77,8 +79,11 @@ function Form({ onPassupper }) {
             <option value="20">Absolutely amazing! (20%)</option>
           </select>
         </div>
-
-        <button type="submit">Submit</button>
+        <div>
+          <button type="submit" className="button">
+            Submit
+          </button>
+        </div>
       </form>
       <div>
         <Display valuess={value} />
