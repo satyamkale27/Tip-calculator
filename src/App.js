@@ -6,7 +6,6 @@ function App() {
   function setStates(newState) {
     setBill(newState);
   }
-  console.log("bill", bill);
 
   function propRecv(passupper) {
     const feedbackPercentage = parseFloat(passupper.feedback);
@@ -22,16 +21,15 @@ function App() {
 
   return (
     <div>
-      <Form onPassupper={propRecv} />
+      <Form onPassupper={propRecv} bill={bill} />
     </div>
   );
 }
 
-function Form({ onPassupper }) {
+function Form({ onPassupper, bill }) {
   const [value, setValue] = useState(0);
   const [feedback, setFeedback] = useState(0);
   const [feedbacks, setFeedbacks] = useState(0);
-
   function handleSubmit(e) {
     e.preventDefault(); // Prevent the default form submission behavior
 
@@ -86,16 +84,21 @@ function Form({ onPassupper }) {
         </div>
       </form>
       <div>
-        <Display valuess={value} />
+        <Display valuess={value} bill={bill} />
       </div>
     </div>
   );
 }
 
-function Display({ valuess }) {
+function Display({ valuess, bill }) {
+  const billvalue = bill.addedval;
+  const tips = bill.tipavg;
+  const totalvalue = billvalue + tips;
   return (
     <div>
-      <p>You pay (${valuess} + tip)</p>
+      <p>
+        You pay ${totalvalue} (${valuess} + ${tips}tip)
+      </p>
     </div>
   );
 }
