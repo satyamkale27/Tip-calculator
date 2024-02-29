@@ -37,14 +37,14 @@ code {
   background-color: aqua;
   margin-top: 5px;
 }
-.btn {
-  display: flex;
-}
+
 .style {
-  margin-left: 20px;
+  margin-left: 70px;
   background-color: aqua;
   padding: 3px;
-  margin-top: 6px;
   padding-right: 8px;
   padding-left: 8px;
+}
+.new {
+  margin-top: -25px;
 }

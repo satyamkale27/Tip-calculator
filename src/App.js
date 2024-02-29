@@ -1,10 +1,15 @@
 import { useState } from "react";
 
 function App() {
-  const [bill, setBill] = useState({ tipavg: 0, addedval: 0 });
+  const initialState = { tipavg: 0, addedval: 0 };
+  const [bill, setBill] = useState(initialState);
 
   function setStates(newState) {
     setBill(newState);
+  }
+  function handleclear() {
+    setBill(initialState);
+    console.log("bill", bill);
   }
 
   function propRecv(passupper) {
@@ -21,12 +26,12 @@ function App() {
 
   return (
     <div>
-      <Form onPassupper={propRecv} bill={bill} />
+      <Form onPassupper={propRecv} bill={bill} handleclear={handleclear} />
     </div>
   );
 }
 
-function Form({ onPassupper, bill }) {
+function Form({ onPassupper, bill, handleclear }) {
   const [value, setValue] = useState(0);
   const [feedback, setFeedback] = useState(0);
   const [feedbacks, setFeedbacks] = useState(0);
@@ -81,11 +86,15 @@ function Form({ onPassupper, bill }) {
           <button type="submit" className="button">
             Submit
           </button>
-          <div>
-            <button className="style">clear</button>
-          </div>
         </div>
       </form>
+
+      <div>
+        <button className="style" onClick={handleclear}>
+          clear
+        </button>
+      </div>
+
       <div>
         <Display valuess={value} bill={bill} />
       </div>
