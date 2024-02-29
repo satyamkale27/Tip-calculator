@@ -7,7 +7,8 @@ function App() {
   function setStates(newState) {
     setBill(newState);
   }
-  function handleclear() {
+  function handleclear(e) {
+    e.preventDefault();
     setBill(initialState);
     console.log("bill", bill);
   }
@@ -82,7 +83,7 @@ function Form({ onPassupper, bill, handleclear }) {
             <option value="20">Absolutely amazing! (20%)</option>
           </select>
         </div>
-        <div className="btn">
+        <div>
           <button type="submit" className="button">
             Submit
           </button>
