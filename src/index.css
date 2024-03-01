@@ -48,6 +48,6 @@ code {
   margin-top: -25px;
   position: absolute;
 }
-/* .cleartop {
-  margin-top: -25px;
-} */
+.output {
+  font-weight: bold;
+}

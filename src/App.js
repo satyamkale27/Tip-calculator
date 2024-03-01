@@ -117,7 +117,7 @@ function Display({ bill }) {
   return (
     <div>
       {toogle ? (
-        <p>
+        <p className="output">
           You pay ${totalvalue} (${billvalue} + ${tips}tip)
         </p>
       ) : (
