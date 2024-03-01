@@ -92,7 +92,7 @@ function Form({ onPassupper, bill, handleclear }) {
 
       <div>
         <button className="style" onClick={handleclear}>
-          clear
+          Reset
         </button>
       </div>
 
@@ -105,7 +105,6 @@ function Form({ onPassupper, bill, handleclear }) {
 
 function Display({ bill }) {
   const billvalue = bill.addedval;
-  console.log("testing", billvalue);
   const tips = bill.tipavg;
   const totalvalue = billvalue + tips;
   return (
