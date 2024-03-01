@@ -105,12 +105,13 @@ function Form({ onPassupper, bill, handleclear }) {
 
 function Display({ valuess, bill }) {
   const billvalue = bill.addedval;
+  console.log("testing", billvalue);
   const tips = bill.tipavg;
   const totalvalue = billvalue + tips;
   return (
     <div>
       <p>
-        You pay ${totalvalue} (${valuess} + ${tips}tip)
+        You pay ${totalvalue} (${billvalue} + ${tips}tip)
       </p>
     </div>
   );
