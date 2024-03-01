@@ -97,13 +97,13 @@ function Form({ onPassupper, bill, handleclear }) {
       </div>
 
       <div>
-        <Display valuess={value} bill={bill} />
+        <Display bill={bill} />
       </div>
     </div>
   );
 }
 
-function Display({ valuess, bill }) {
+function Display({ bill }) {
   const billvalue = bill.addedval;
   console.log("testing", billvalue);
   const tips = bill.tipavg;
