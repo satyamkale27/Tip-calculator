@@ -105,13 +105,24 @@ function Form({ onPassupper, bill, handleclear }) {
 
 function Display({ bill }) {
   const billvalue = bill.addedval;
+  console.log("testing", billvalue);
   const tips = bill.tipavg;
   const totalvalue = billvalue + tips;
+  let toogle = false;
+  if (billvalue > 0) {
+    toogle = true;
+  } else {
+    toogle = false;
+  }
   return (
     <div>
-      <p>
-        You pay ${totalvalue} (${billvalue} + ${tips}tip)
-      </p>
+      {toogle ? (
+        <p>
+          You pay ${totalvalue} (${billvalue} + ${tips}tip)
+        </p>
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 }
