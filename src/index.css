@@ -50,6 +50,8 @@ code {
 }
 .output {
   font-weight: bold;
+  margin-top: 50px;
+  color: blueviolet;
 }
 
 @media only screen and (max-width: 600px) {
