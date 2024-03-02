@@ -51,3 +51,26 @@ code {
 .output {
   font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  .table {
+    display: block;
+  }
+
+  .container p,
+  .container input {
+    display: block;
+    width: 100%;
+  }
+
+  .button,
+  .style {
+    display: block;
+    width: 20%;
+    margin: 10px 0;
+  }
+}
